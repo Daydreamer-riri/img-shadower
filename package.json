@@ -1,7 +1,7 @@
 {
   "name": "img-shadower",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@8.5.0",
   "description": "A cli tool that add rounded corners and shadows to the image.",
   "license": "MIT",
