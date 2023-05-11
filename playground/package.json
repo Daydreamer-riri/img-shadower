@@ -1,0 +1,6 @@
+{
+  "name": "plaground",
+  "dependencies": {
+    "img-shadower": "workspace:*"
+  }
+}
