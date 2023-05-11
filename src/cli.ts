@@ -19,7 +19,7 @@ const commandArgs = {
   border: {
     type: 'string',
     alias: 'b',
-    default: '#c5c5c5',
+    default: '#a8a8a8',
     description: 'border color',
   },
 } as const
