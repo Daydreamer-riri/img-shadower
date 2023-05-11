@@ -1,12 +1,10 @@
 import satori from 'satori'
 import sizeOf from 'image-size'
 
-export async function draw(imageData: Buffer, type: string) {
+export async function draw(imageData: Buffer, type: string, border: string) {
   const { width, height } = sizeOf(imageData)
-  if (!width || !height) {
-    Promise.reject('size')
-    return
-  }
+  if (!width || !height)
+    throw new Error('Can\'t get size')
 
   const relHeight = height * 0.8
   const boxShadow = `,
@@ -22,19 +20,36 @@ export async function draw(imageData: Buffer, type: string) {
         style: {
           display: 'flex',
         },
-        children: {
-          type: 'img',
-          props: {
-            src: `data:${type};base64,${imageData.toString('base64')}`,
-            style: {
-              transform: 'scale(0.8)',
-              borderRadius: '16px',
-              boxShadow,
+        children: [
+          {
+            type: 'img',
+            props: {
+              src: `data:${type};base64,${imageData.toString('base64')}`,
+              style: {
+                transform: 'scale(0.8)',
+                borderRadius: '16px',
+                boxShadow,
+              },
+              width,
+              height,
             },
-            width,
-            height,
           },
-        },
+          {
+            type: 'div',
+            props: {
+              style: {
+                display: 'flex',
+                height: `${height}px`,
+                width: `${width}px`,
+                transform: 'scale(0.8)',
+                borderRadius: '16px',
+                position: 'absolute',
+                border: `1px solid ${border}`,
+              },
+
+            },
+          },
+        ],
       },
     },
     {

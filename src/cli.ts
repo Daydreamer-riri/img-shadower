@@ -16,6 +16,12 @@ const commandArgs = {
     required: true,
     description: 'output file',
   },
+  border: {
+    type: 'string',
+    alias: 'b',
+    default: '#c5c5c5',
+    description: 'border color',
+  },
 } as const
 
 export type Args = ParsedArgs<typeof commandArgs>
