@@ -22,6 +22,12 @@ const commandArgs = {
     default: '#a8a8a8',
     description: 'border color',
   },
+  elevation: {
+    type: 'string',
+    alias: 'e',
+    default: '3',
+    description: 'elevation',
+  },
 } as const
 
 export type Args = ParsedArgs<typeof commandArgs>

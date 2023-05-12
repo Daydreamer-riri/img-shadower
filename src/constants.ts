@@ -7,3 +7,5 @@ const { version, name, description } = JSON.parse(
 export const VERSION = version as string
 export const NAME = name as string
 export const DESCRIPTION = description as string
+
+export const DEFAULT_ELEVATION = 8

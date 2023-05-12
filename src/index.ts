@@ -8,7 +8,7 @@ import { draw } from './draw'
 export type { Args }
 
 export async function main(args: Args) {
-  const { input, output, border } = args
+  const { input, output } = args
   const path = isAbsolute(input) ? input : resolve(cwd(), input)
   const type = mime.getType(extname(path))!
 
@@ -24,7 +24,7 @@ export async function main(args: Args) {
 
   try {
     const file = fs.readFileSync(path)
-    const svg = await draw(file, type, border)
+    const svg = await draw(file, type, args)
     fs.writeFileSync(resolve(cwd(), output), svg.toString())
   }
   catch (e) {

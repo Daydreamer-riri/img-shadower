@@ -1,17 +1,13 @@
 import satori from 'satori'
 import sizeOf from 'image-size'
+import { elevations } from './elevations'
+import { DEFAULT_ELEVATION } from './constants'
+import type { Args } from '.'
 
-export async function draw(imageData: Buffer, type: string, border: string) {
+export async function draw(imageData: Buffer, type: string, { border, elevation }: Args) {
   const { width, height } = sizeOf(imageData)
   if (!width || !height)
     throw new Error('Can\'t get size')
-
-  const relHeight = height * 0.8
-  const boxShadow = `,
-    0 0.2px 0.3px hsl(0deg 0% 0% / 0),
-    0 ${relHeight / 20}px ${relHeight * 3 / 40}px hsl(0deg 0% 0% / 0.2),
-    0 ${relHeight / 24}px ${relHeight / 16}px hsl(0deg 0% 0% / 0.4),
-    `
 
   const svg = await satori(
     {
@@ -28,7 +24,7 @@ export async function draw(imageData: Buffer, type: string, border: string) {
               style: {
                 transform: 'scale(0.8)',
                 borderRadius: '16px',
-                boxShadow,
+                boxShadow: elevations?.[elevation] ?? elevations[DEFAULT_ELEVATION],
               },
               width,
               height,
