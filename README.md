@@ -23,3 +23,7 @@ See `img-shadower --help` for more details
     width="600"
   >
 </p>
+
+## License
+
+[MIT](./LICENSE) License © 2023 [Riri](https://github.com/Daydreamer-riri)
