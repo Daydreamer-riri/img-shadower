@@ -1,6 +1,6 @@
 import type { ArgsDef, ParsedArgs } from 'citty'
 import { defineCommand, runMain } from 'citty'
-import { DESCRIPTION, NAME, VERSION } from './constants'
+import { DEFAULT_ELEVATION, DESCRIPTION, NAME, VERSION } from './constants'
 import { main } from '.'
 
 const commandArgs = {
@@ -25,7 +25,7 @@ const commandArgs = {
   elevation: {
     type: 'string',
     alias: 'e',
-    default: '3',
+    default: `${DEFAULT_ELEVATION}`,
     description: 'elevation',
   },
 } as const
