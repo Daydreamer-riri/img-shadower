@@ -1,13 +1,10 @@
 import satori from 'satori'
-import sizeOf from 'image-size'
 import { elevations } from './elevations'
 import { DEFAULT_ELEVATION } from './constants'
-import type { Args } from '.'
+import type { Args, Rect } from '.'
 
-export async function draw(imageData: Buffer, type: string, { border, elevation }: Args) {
-  const { width, height } = sizeOf(imageData)
-  if (!width || !height)
-    throw new Error('Can\'t get size')
+export async function draw(imageData: Buffer, type: string, rect: Rect, { border, elevation }: Args) {
+  const { width, height } = rect
 
   const svg = await satori(
     {

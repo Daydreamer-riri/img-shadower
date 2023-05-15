@@ -30,6 +30,9 @@
     "release": "bumpp && pnpm publish --no-git-checks",
     "test": "vitest"
   },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.4.1"
+  },
   "devDependencies": {
     "@ririd/eslint-config": "^0.5.0",
     "@types/mime": "^3.0.1",
