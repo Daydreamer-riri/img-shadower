@@ -6,7 +6,7 @@ Add rounded corners and shadows to the image.
 
 ## Useage
 
-Just `npx img-shadower -i playground/dark.png -o playground/out-dark.svg`.
+Just `npx img-shadower -i playground/dark.png -o playground/out-dark.png`.
 
 Alternatively, you can also install it globally: `npm install img-shadower -g`
 
@@ -18,7 +18,7 @@ See `img-shadower --help` for more details
 
 <p align="center">
   <img 
-    src="https://github.com/Daydreamer-riri/img-shadower/blob/main/playground/out-light.svg?raw=true" 
+    src="https://github.com/Daydreamer-riri/img-shadower/blob/main/playground/out-light.png?raw=true" 
     alt="after"
     width="600"
   >
