@@ -13,6 +13,11 @@
   "bugs": {
     "url": "https://github.com/Daydreamer-riri/img-shadower/issues"
   },
+  "keywords": [
+    "cli",
+    "image",
+    "resvg"
+  ],
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "bin": {
